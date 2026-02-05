@@ -24,7 +24,7 @@ EMOTISENSE-AI/
 ├── README.md                      # This file
 ├── src/
 │   ├── config.py                  # Configuration settings
-│   ├── utils.py                   # Utility functions
+│   ├── utils.py                   # Utility functions (includes analytics & screenshots)
 │   ├── webcam/
 │   │   ├── camera.py              # Camera capture
 │   │   └── face_emotion.py        # Face emotion detection
@@ -37,7 +37,7 @@ EMOTISENSE-AI/
 │   │   ├── ui_components.py       # UI components
 │   │   └── plots.py               # Visualization charts
 │   ├── logger/
-│   │   ├── session_logger.py      # Session logging
+│   │   ├── session_logger.py      # Session logging with screenshots
 │   │   └── report_generator.py    # PDF report generation
 │   └── fallback/
 │       └── rule_based.py          # Simulation/fallback mode
@@ -46,7 +46,8 @@ EMOTISENSE-AI/
 │       └── demo_session.csv       # Sample session data
 └── outputs/
     ├── session_logs/              # Session CSV files
-    └── reports/                   # Generated PDF reports
+    ├── reports/                   # Generated PDF reports
+    └── screenshots/               # Captured screenshots during sessions
 ```
 
 ## 🎯 Features
@@ -58,11 +59,16 @@ EMOTISENSE-AI/
 - **Live Dashboard** with real-time metrics and alerts
 - **Session Logging** with CSV export
 - **PDF Report Generation** with insights and recommendations
+- **Smart Screenshot Capture** during critical moments (auto + manual)
+- **Session Intelligence** with advanced analytics and feedback
+- **Quality Scoring System** for comprehensive session evaluation
 
 ### Dashboard Tabs
 1. **Live Dashboard**: Real-time monitoring with video feed, metrics cards, and charts
 2. **Session Report**: Comprehensive analysis with statistics and export options
-3. **About**: Project information and technology stack
+3. **Screenshots**: Gallery of captured critical moments during session
+4. **Analytics**: Advanced session intelligence with peak detection and feedback
+5. **About**: Project information and technology stack
 
 ### Fallback Features
 - **Simulation Mode**: Works without camera/microphone
@@ -75,8 +81,9 @@ EMOTISENSE-AI/
 - **Computer Vision**: OpenCV, FER (Facial Emotion Recognition)
 - **Audio Processing**: sounddevice, librosa
 - **Data Analysis**: pandas, numpy
-- **Visualization**: plotly
+- **Visualization**: plotly, matplotlib
 - **Reports**: reportlab
+- **Screenshots**: pyautogui, Pillow
 - **Backup Detection**: DeepFace (fallback for FER)
 
 ## 📊 Metrics Provided
@@ -140,6 +147,8 @@ AUDIO_WEIGHT = 0.4
 - **Real-time Timeline**: Shows last 60 seconds of emotion data
 - **Stress Gauge**: Visual stress level indicator with color coding
 - **Emotion Breakdown**: Detailed face emotion percentages
+- **Critical Moment Detection**: Automatic identification of peak stress/confusion
+- **Manual Screenshot Capture**: Mark important moments with 📸 button
 
 ## 📈 Output Files
 
@@ -151,7 +160,12 @@ AUDIO_WEIGHT = 0.4
 ### PDF Reports
 - Location: `outputs/reports/`
 - Format: `emotion_report_{id}_{timestamp}.pdf`
-- Contains: Session stats, charts, recommendations
+- Contains: Session stats, charts, recommendations, peak analysis
+
+### Screenshots
+- Location: `outputs/screenshots/`
+- Format: `screenshot_{session_id}_{timestamp}.png`
+- Types: Auto-captured (critical moments) and manual captures
 
 ## 🔄 Fallback Mechanisms
 
@@ -159,6 +173,16 @@ AUDIO_WEIGHT = 0.4
 2. **Microphone Failure**: Generates stress scores based on last known values + noise
 3. **Library Errors**: Graceful degradation with default values
 4. **Complete Simulation**: Toggle for full demo mode without hardware
+
+## 🎯 Hackathon Ready
+
+- **Single Command Setup**: `pip install -r requirements.txt && streamlit run app.py`
+- **Demo Mode**: Simulation toggle for presentations without hardware
+- **Stable Performance**: Robust error handling and fallback systems
+- **Professional UI**: Clean Streamlit interface with real-time updates
+- **Export Capabilities**: CSV and PDF reports for judges/stakeholders
+- **Smart Analytics**: Session intelligence with quality scoring and feedback
+- **Visual Evidence**: Screenshot capture for critical moments documentation
 
 ## 🐛 Troubleshooting
 
@@ -188,27 +212,23 @@ pip install sounddevice --upgrade
 
 This project is open source and available under the MIT License.
 
-
 ---
 
-
-## 👨‍💻 Author
+## 👨💻 Author
 
 **Danish** — B.Tech Artificial Intelligence and Data Science 
 
 Hackathon Project: **SRM IST × NOOBTRON — NOOB HACKFEST**
-
-
 
 ## 👥 Team Members — PRIMELOGIX
 
 - **Danish M** — AI/ML Developer & Integration  
   Implemented the core emotion pipeline (face + audio processing), multimodal fusion logic, and integrated key modules into the working application.
 
-- **Chidarth H** — UI/UX & Dashboard Support  
+- **Chidarth M** — UI/UX & Dashboard Support  
   Supported dashboard layout planning, user flow design, and UI feature suggestions for live monitoring.
 
-- **Deepban T** — Research & Feature Design  
+- **Deephan T** — Research & Feature Design  
   Worked on problem research, identifying real-world use cases, and defining feature requirements for a practical solution.
 
 - **Jothik Rithin Bio J** — Testing & Validation  
@@ -217,11 +237,6 @@ Hackathon Project: **SRM IST × NOOBTRON — NOOB HACKFEST**
 - **Deepak T A** — Documentation & Presentation  
   Assisted with README preparation, pitch content structuring, and hackathon submission formatting.
 
-
-
-
-
 ---
 
 **Built for hackathons, designed for impact.** 🚀
-
