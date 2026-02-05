@@ -1,181 +1,227 @@
-project:
-  name: "EMOTISENSE AI 🧠"
-  subtitle: "Multimodal Emotion Recognition using Audio + Face"
-  description: >
-    A real-time emotion monitoring system that combines facial emotion detection
-    and audio stress analysis to provide comprehensive emotional insights.
+# EMOTISENSE AI 🧠
 
-event:
-  hackathon: "SRM IST × NOOBTRON — NOOB HACKFEST"
-  host: "SRM Institute of Science and Technology, Tiruchirappalli"
-  track:
-    name: "Track – 1"
-    theme: "Artificial Intelligence & Machine Learning"
-    sub_theme: "1.1.6 Multimodal Emotion Recognition using Audio-Visual Cues"
+**Multimodal Emotion Recognition using Audio + Face**
 
-quick_start:
-  command: "pip install -r requirements.txt && streamlit run app.py"
-  url: "http://localhost:8501"
+A real-time emotion monitoring system that combines facial emotion detection and audio stress analysis to provide comprehensive emotional insights.
 
-project_structure:
-  EMOTISENSE-AI:
-    - app.py: "Main Streamlit application"
-    - requirements.txt: "Python dependencies"
-    - README.md: "Project documentation"
-    - src:
-        - config.py: "Configuration settings"
-        - utils.py: "Utility functions"
-        - webcam:
-            - camera.py: "Camera capture"
-            - face_emotion.py: "Face emotion detection"
-        - audio:
-            - mic_capture.py: "Microphone capture"
-            - audio_emotion.py: "Audio stress analysis"
-        - fusion:
-            - fusion_engine.py: "Multimodal fusion logic"
-        - dashboard:
-            - ui_components.py: "UI components"
-            - plots.py: "Visualization charts"
-        - logger:
-            - session_logger.py: "Session logging"
-            - report_generator.py: "PDF report generation"
-        - fallback:
-            - rule_based.py: "Simulation / fallback mode"
-        - analytics:
-            - session_insights.py: "Session intelligence & metrics"
-            - feedback_engine.py: "Rule-based feedback generation"
-    - outputs:
-        - session_logs: "Session CSV files"
-        - reports: "Generated PDF reports"
-        - snapshots: "Auto-captured screenshots"
+## 🚀 Quick Start
 
-features:
-  core:
-    - "Real-time face emotion detection (happy, sad, angry, fear, surprise, neutral)"
-    - "Audio stress analysis from microphone input"
-    - "Multimodal fusion engine (face + audio)"
-    - "Live dashboard with real-time metrics and alerts"
-    - "Session logging with CSV export"
-    - "PDF report generation with insights"
+Run the application in **1 command**:
 
-  advanced:
-    - "Automatic screenshot capture on extreme stress"
-    - "Automatic screenshot capture on extreme happiness"
-    - "Distraction-based screenshot capture"
-    - "Emotion timeline analysis"
-    - "Top critical moments detection"
-    - "Emotion stability score"
-    - "Recovery speed measurement"
-    - "Attention span estimation"
-    - "Session risk indicator (Low / Medium / High)"
-    - "Session quality score (0–100)"
+```bash
+# Install dependencies and run
+pip install -r requirements.txt && streamlit run app.py
+```
 
-dashboard_tabs:
-  - "Live Dashboard"
-  - "Session Report"
-  - "Screenshot Gallery"
-  - "About"
+The application will open in your browser at `http://localhost:8501`
 
-fallback_and_safety:
-  - "Simulation mode (no camera/microphone required)"
-  - "Automatic hardware failure handling"
-  - "Manual mark important moment button"
-  - "Local execution for privacy"
-  - "Graceful error handling"
+## 📁 Project Structure
 
-technology_stack:
-  frontend: "Streamlit"
-  computer_vision: ["OpenCV", "FER"]
-  audio_processing: ["sounddevice", "librosa"]
-  data_analysis: ["pandas", "numpy"]
-  visualization: "plotly"
-  reports: "reportlab"
-  backup: "DeepFace"
+```
+EMOTISENSE-AI/
+├── app.py                          # Main Streamlit application
+├── requirements.txt                # Python dependencies
+├── README.md                      # This file
+├── src/
+│   ├── config.py                  # Configuration settings
+│   ├── utils.py                   # Utility functions
+│   ├── webcam/
+│   │   ├── camera.py              # Camera capture
+│   │   └── face_emotion.py        # Face emotion detection
+│   ├── audio/
+│   │   ├── mic_capture.py         # Microphone capture
+│   │   └── audio_emotion.py       # Audio stress analysis
+│   ├── fusion/
+│   │   └── fusion_engine.py       # Multimodal fusion
+│   ├── dashboard/
+│   │   ├── ui_components.py       # UI components
+│   │   └── plots.py               # Visualization charts
+│   ├── logger/
+│   │   ├── session_logger.py      # Session logging
+│   │   └── report_generator.py    # PDF report generation
+│   └── fallback/
+│       └── rule_based.py          # Simulation/fallback mode
+├── data/
+│   └── sample_sessions/
+│       └── demo_session.csv       # Sample session data
+└── outputs/
+    ├── session_logs/              # Session CSV files
+    └── reports/                   # Generated PDF reports
+```
 
-metrics:
-  primary:
-    - "Stress (0–1)"
-    - "Engagement (0–1)"
-    - "Confidence (0–1)"
-    - "Confusion (0–1)"
-  emotional_states:
-    - "Stressed"
-    - "Engaged"
-    - "Calm"
-    - "Positive"
-    - "Negative"
-    - "Neutral"
-  audio_features:
-    - "RMS Energy"
-    - "Zero Crossing Rate"
-    - "MFCC Coefficients"
-    - "Spectral Centroid"
+## 🎯 Features
 
-usage:
-  start_session:
-    - "Run: streamlit run app.py"
-    - "Click Start Session"
-    - "Allow camera and microphone access"
-    - "Monitor emotions live"
-  simulation_mode:
-    - "Enable simulation mode if hardware unavailable"
-    - "Generates realistic demo data"
-  reports:
-    - "Stop session"
-    - "View analytics"
-    - "Export CSV logs"
-    - "Generate PDF reports"
-    - "Review captured screenshots"
+### Core Functionality
+- **Real-time Face Emotion Detection** (6 emotions: happy, sad, angry, fear, surprise, neutral)
+- **Audio Stress Analysis** from microphone input
+- **Multimodal Fusion Engine** combining face and audio data
+- **Live Dashboard** with real-time metrics and alerts
+- **Session Logging** with CSV export
+- **PDF Report Generation** with insights and recommendations
 
-configuration:
-  audio:
-    sample_rate: 16000
-    chunk_duration: 2.0
-  video:
-    width: 640
-    height: 480
-  thresholds:
-    stress_threshold: 0.7
-    alert_duration_seconds: 5
-  fusion_weights:
-    face: 0.6
-    audio: 0.4
+### Dashboard Tabs
+1. **Live Dashboard**: Real-time monitoring with video feed, metrics cards, and charts
+2. **Session Report**: Comprehensive analysis with statistics and export options
+3. **About**: Project information and technology stack
 
-alerts:
-  - "High stress sustained alert"
-  - "Emotion heat indicator (green → red)"
-  - "Real-time emotion timeline"
-  - "Focus status badge"
+### Fallback Features
+- **Simulation Mode**: Works without camera/microphone
+- **Hardware Failure Handling**: Automatic fallback to simulated data
+- **Robust Error Handling**: Graceful degradation when components fail
 
-fallback_mechanisms:
-  - "Camera failure → simulated face emotions"
-  - "Microphone failure → simulated audio stress"
-  - "Library errors → default safe values"
-  - "Complete demo mode without hardware"
+## 🛠️ Technology Stack
 
-license: "MIT"
+- **Frontend**: Streamlit
+- **Computer Vision**: OpenCV, FER (Facial Emotion Recognition)
+- **Audio Processing**: sounddevice, librosa
+- **Data Analysis**: pandas, numpy
+- **Visualization**: plotly
+- **Reports**: reportlab
+- **Backup Detection**: DeepFace (fallback for FER)
 
-author:
-  name: "Danish"
-  degree: "B.Tech Artificial Intelligence and Data Science"
+## 📊 Metrics Provided
 
-team:
-  name: "PRIMELOGIX"
-  members:
-    - name: "Danish M"
-      role: "AI/ML Developer & Integration"
-      contribution: "Core emotion pipeline, fusion logic, analytics, system integration"
-    - name: "Chidarth H"
-      role: "UI/UX & Dashboard Support"
-      contribution: "Dashboard layout, UI flow, interaction design"
-    - name: "Deepban T"
-      role: "Research & Feature Design"
-      contribution: "Problem research, use cases, feature planning"
-    - name: "Jothik Rithin Bio J"
-      role: "Testing & Validation"
-      contribution: "Workflow testing, edge cases, demo stability"
-    - name: "Deepak T A"
-      role: "Documentation & Presentation"
-      contribution: "README preparation, pitch structuring, submission formatting"
+### Primary Metrics
+- **Stress Level** (0-1): Combined face negative emotions + audio stress
+- **Engagement** (0-1): Positive emotions adjusted by stress level
+- **Confusion** (0-1): Emotion variance + moderate stress indicator
+- **Confidence** (0-1): Inverse of stress and confusion
 
-tagline: "Built for hackathons, designed for impact 🚀"
+### Emotional States
+- Stressed, Engaged, Calm, Positive, Negative, Neutral
+
+### Audio Features
+- RMS Energy, Zero Crossing Rate, MFCC coefficients, Spectral Centroid
+
+## 🎮 Usage Instructions
+
+### Starting a Session
+1. Launch the application: `streamlit run app.py`
+2. Click **"Start Session"** in the sidebar
+3. Allow camera and microphone permissions when prompted
+4. Monitor real-time emotions in the Live Dashboard
+
+### Simulation Mode
+- Toggle **"Simulation Mode"** if camera/microphone unavailable
+- Generates realistic emotion patterns for demonstration
+- Perfect for testing and demos without hardware
+
+### Generating Reports
+1. Stop the active session
+2. Navigate to **"Session Report"** tab
+3. View statistics and charts
+4. Export as CSV or generate PDF report
+
+## 🔧 Configuration
+
+Key settings in `src/config.py`:
+
+```python
+# Audio settings
+AUDIO_SAMPLE_RATE = 16000
+AUDIO_CHUNK_DURATION = 2.0
+
+# Video settings  
+VIDEO_WIDTH = 640
+VIDEO_HEIGHT = 480
+
+# Thresholds
+STRESS_THRESHOLD = 0.7
+ALERT_DURATION = 5  # seconds
+
+# Fusion weights
+FACE_WEIGHT = 0.6
+AUDIO_WEIGHT = 0.4
+```
+
+## 🚨 Alerts & Monitoring
+
+- **High Stress Alert**: Triggered when stress > 0.7 for 5+ seconds
+- **Real-time Timeline**: Shows last 60 seconds of emotion data
+- **Stress Gauge**: Visual stress level indicator with color coding
+- **Emotion Breakdown**: Detailed face emotion percentages
+
+## 📈 Output Files
+
+### Session Logs
+- Location: `outputs/session_logs/`
+- Format: `session_{id}_{timestamp}.csv`
+- Contains: Timestamp, emotions, stress scores, fused metrics
+
+### PDF Reports
+- Location: `outputs/reports/`
+- Format: `emotion_report_{id}_{timestamp}.pdf`
+- Contains: Session stats, charts, recommendations
+
+## 🔄 Fallback Mechanisms
+
+1. **Camera Failure**: Uses simulated face emotions with realistic patterns
+2. **Microphone Failure**: Generates stress scores based on last known values + noise
+3. **Library Errors**: Graceful degradation with default values
+4. **Complete Simulation**: Toggle for full demo mode without hardware
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Camera not working:**
+- Enable "Simulation Mode" in sidebar
+- Check camera permissions in browser
+- Ensure no other applications are using the camera
+
+**Microphone not detected:**
+- Application automatically falls back to simulated audio
+- Check microphone permissions
+- Verify microphone is not muted
+
+**Installation errors:**
+```bash
+# If librosa installation fails
+pip install librosa --no-deps
+pip install numba
+
+# If sounddevice fails  
+pip install sounddevice --upgrade
+```
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+
+---
+
+
+## 👨‍💻 Author
+
+**Danish** — B.Tech Artificial Intelligence and Data Science 
+
+Hackathon Project: **SRM IST × NOOBTRON — NOOB HACKFEST**
+
+
+
+## 👥 Team Members — PRIMELOGIX
+
+- **Danish M** — AI/ML Developer & Integration  
+  Implemented the core emotion pipeline (face + audio processing), multimodal fusion logic, and integrated key modules into the working application.
+
+- **Chidarth H** — UI/UX & Dashboard Support  
+  Supported dashboard layout planning, user flow design, and UI feature suggestions for live monitoring.
+
+- **Deepban T** — Research & Feature Design  
+  Worked on problem research, identifying real-world use cases, and defining feature requirements for a practical solution.
+
+- **Jothik Rithin Bio J** — Testing & Validation  
+  Contributed to testing the application workflow, identifying edge cases, and improving demo stability.
+
+- **Deepak T A** — Documentation & Presentation  
+  Assisted with README preparation, pitch content structuring, and hackathon submission formatting.
+
+
+
+
+
+---
+
+**Built for hackathons, designed for impact.** 🚀
+
